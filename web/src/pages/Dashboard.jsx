@@ -91,7 +91,7 @@ const Dashboard = () => {
                         <div className="flex items-center gap-4">
                           <div className="w-14 h-14 rounded-2xl bg-slate-100 border-2 border-white shadow-sm overflow-hidden flex-shrink-0 flex items-center justify-center">
                            {user.user_image ? (
-                              <img src={`http://localhost:5000/${user.user_image}`} alt={user.name}
+                              <img src={`https://authentication-backend-jw5e.onrender.com/${user.user_image}`} alt={user.name}
                                 onError={(e) => { e.target.onerror = null; e.target.src="https://via.placeholder.com/150?text=User" }}
                                 className="w-full h-full object-cover"/>
                            ) : (
