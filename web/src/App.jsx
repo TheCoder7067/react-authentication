@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="main-root">
       <Toaster/>
-      <BrowserRouter basename="/authentication/">
+      <BrowserRouter basename="/">
         <Routes>
             <Route path='/' element={<Authentication/> }/>
 
