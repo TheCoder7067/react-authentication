@@ -1,0 +1,28 @@
+import { useState } from 'react'
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Authentication from './pages/Authentication'
+import Toaster from './pages/Toaster'
+import Dashboard from './pages/Dashboard'
+import ProtectedRoute from './pages/ProtectedRoute'
+
+function App() {
+
+  return (
+    <div className="main-root">
+      <Toaster/>
+      <BrowserRouter basename="/authentication/">
+        <Routes>
+            <Route path='/' element={<Authentication/> }/>
+
+            <Route element={<ProtectedRoute/>}>
+                <Route path='/dashboard' element={<Dashboard/> }/>
+            </Route>
+            
+        </Routes>
+      </BrowserRouter>
+    </div>
+  )
+}
+
+export default App

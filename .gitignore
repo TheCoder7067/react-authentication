@@ -1,0 +1,6 @@
+# Secret and heavy files
+node_modules/
+.env
+dist/
+build/
+.DS_Store
