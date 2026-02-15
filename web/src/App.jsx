@@ -5,6 +5,7 @@ import Authentication from './pages/Authentication'
 import Toaster from './pages/Toaster'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './pages/ProtectedRoute'
+import Mainpage from './Pages/Mainpage'
 
 function App() {
 
