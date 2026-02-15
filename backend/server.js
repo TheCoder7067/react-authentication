@@ -13,6 +13,14 @@ app.use(cors({
     credentials: true,
   }));
 
+const uploadPath = path.join(process.cwd(), "uploads", "users");
+
+if (!fs.existsSync(uploadPath)) {
+    fs.mkdirSync(uploadPath, { recursive: true });
+    console.log("✅ Uploads/users folder created successfully!");
+} else {
+    console.log("📂 Uploads folder already exists.");
+}
 app.use("/uploads", express.static("uploads"));
 import userRoute from "./routes/web/userRoute.js";
 
