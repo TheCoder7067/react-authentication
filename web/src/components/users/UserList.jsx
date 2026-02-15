@@ -147,7 +147,7 @@ const UserList = ({ users, isLoading, error }) => {
                 <div className="mx-auto w-16 h-16 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center">
                     {isDeleting ? <Loader2 className="animate-spin" size={32} /> : <Trash2 size={32} />}
                 </div>
-                <p className="text-slate-600">Kya aap sach mein <span className="font-bold">{selectedUser?.name}</span> ko delete karna chahte hain?</p>
+                <p className="text-slate-600">Are you sure you want to delete <span className="font-bold">{selectedUser?.name}</span>?</p>
                 
                 <div className="flex gap-3 pt-4">
                     <button 
