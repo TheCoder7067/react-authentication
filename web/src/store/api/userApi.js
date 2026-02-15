@@ -12,7 +12,7 @@ export const userApi = mainApi.injectEndpoints({
         }),
         updateUser: builder.mutation({
             query: ({id, formData}) => ({
-                url: `users/update/${id}`,
+                url: `/users/update/${id}`,
                 method: "PUT",
                 body: formData
             }),
