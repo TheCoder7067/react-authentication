@@ -7,7 +7,8 @@ const app = express();
 dotenv.config();
 app.use(express.json());
 app.use(cors({
-    origin: "https://authentication-web-1c2r.onrender.com", 
+    // origin: "https://authentication-web-1c2r.onrender.com", 
+    origin: true, 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   }));

@@ -28,7 +28,7 @@ export const Signup = async (req, res) => {
             email,
             password,
             address,
-            user_image: req.file ? req.file.path : ''
+            user_image: req.file ? req.file.path.replace(/\\/g, "/") : ''
         });
 
         const savedUser = await newUser.save();
@@ -65,7 +65,7 @@ export const Signup = async (req, res) => {
 
 
 export const Login = async (req, res) => {
-     // console.log("FROENTEND DATA RECEIVED:", req.body);
+     console.log("FROENTEND DATA RECEIVED:", req.body);
 
    try{
        const { email, password } = req.body;

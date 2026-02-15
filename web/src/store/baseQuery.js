@@ -1,7 +1,7 @@
 import { fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const baseQuery = fetchBaseQuery({
-    baseUrl: "https://authentication-backend-jw5e.onrender.com/api",
+    baseUrl: "http://localhost:5000/api",
     prepareHeaders: (headers) => {
         const token = localStorage.getItem('token');
         if(token){
