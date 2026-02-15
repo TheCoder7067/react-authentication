@@ -7,8 +7,8 @@ const app = express();
 dotenv.config();
 app.use(express.json());
 app.use(cors({
-    // origin: "https://authentication-web-1c2r.onrender.com", 
-    origin: true, 
+    origin: "https://authentication-web-1c2r.onrender.com", 
+    // origin: true, 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   }));
@@ -22,12 +22,13 @@ const connectDB = async () => {
        console.log("MongoDB Connected...")
 	}catch(error){
 	   console.log("Mongoose Connection Failed!", error);
+	   process.exit(1);
 	}
 }
 connectDB();
 
 app.get('/', (req, res) => {
-	res.send("Welcome to Authentication Home!");
+	res.send("Welcome to Authentication Home! Server is Live 🚀");
 });
 
 app.use('/api', userRoute); 
