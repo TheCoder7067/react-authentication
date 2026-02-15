@@ -65,11 +65,12 @@ export const Signup = async (req, res) => {
 
 
 export const Login = async (req, res) => {
-     console.log("FROENTEND DATA RECEIVED:", req.body);
+     // console.log("FROENTEND DATA RECEIVED:", req.body);
 
    try{
        const { email, password } = req.body;
-
+       const BASE_URL = process.env.BASE_URL || "http://localhost:5000/"; 
+       
         const user = await users.findOne({
             $or: [{ email: email }, { mobile: email }]
         });
@@ -90,7 +91,7 @@ export const Login = async (req, res) => {
                     mobile: user.mobile,
                     email: user.email,
                     address: user.address,
-                    user_image: user.user_image
+                    user_image: BASE_URL + user.user_image
                 }
            });
        }else{
